@@ -1,57 +1,38 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>Tyrin's Music</title>
-  <link rel="stylesheet" href="style.css">
+    <meta charset="UTF-8">
+    <title>Music Forum</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <h1>Tyrin's Favorite Songs</h1>
-  <div class="tabs">
-    <button class="tab-button" onclick="openTab('hiphop')">Hip-Hop</button>
-    <button class="tab-button" onclick="openTab('rap')">Rap</button>
-    <button class="tab-button" onclick="openTab('other')">Other</button>
-  </div>
 
-  <div id="hiphop" class="tab-content">
-    <h2>Dreamcatcher by Hurricane Wisdom</h2>
-    <img src="images/dreamcatcher.jpg" alt="Dreamcatcher Art" width="200">
-    <p>My favorite vibes, the beat is amazing!</p>
-    
-    <h2>Hurtin by Lil Baby</h2>
-    <img src="images/hurtin.jpg" alt="Hurtin Art" width="200">
-    <p>Love the emotional flow in this track.</p>
-  </div>
+    <header>
+        <h1>🎵 Music Forum</h1>
+        <p>Explore our favorite music and trending hits across the country.</p>
+    </header>
 
-  <div id="rap" class="tab-content" style="display:none">
-    <h2>Right Here by Lil Poppa</h2>
-    <img src="images/right_here.jpg" alt="Right Here Art" width="200">
-    <p>This song just hits hard every time.</p>
+    <main>
+        <div class="card-container">
+            <a href="tyrin.html" class="music-card">
+                <div class="card-icon">🎧</div>
+                <h2>Tyrin's Favorites</h2>
+                <p>Check out the songs Tyrin enjoys the most.</p>
+            </a>
 
-    <h2>Late Night by YMC Ant</h2>
-    <img src="images/late_night.jpg" alt="Late Night Art" width="200">
-    <p>Perfect late-night vibes.</p>
-  </div>
+            <a href="john.html" class="music-card">
+                <div class="card-icon">🎸</div>
+                <h2>John's Favorites</h2>
+                <p>Discover the tracks John listens to daily.</p>
+            </a>
 
-  <div id="other" class="tab-content" style="display:none">
-    <h2>Sliders & Spartans by BC Tae</h2>
-    <img src="images/sliders.jpg" alt="Sliders Art" width="200">
-    <p>Cool experimental sounds.</p>
+            <a href="us-popular.html" class="music-card">
+                <div class="card-icon">🔥</div>
+                <h2>U.S. Popular</h2>
+                <p>See what's trending across the country.</p>
+            </a>
+        </div>
+    </main>
 
-    <h2>Still Having Problems by Luhh Dyl</h2>
-    <img src="images/problems.jpg" alt="Still Having Problems Art" width="200">
-    <p>One of those tracks that sticks with you.</p>
-  </div>
-
-  <script>
-    function openTab(tabName) {
-      let i, tabcontent, tabbuttons;
-      tabcontent = document.getElementsByClassName("tab-content");
-      for (i = 0; i < tabcontent.length; i++) {
-        tabcontent[i].style.display = "none";
-      }
-      document.getElementById(tabName).style.display = "block";
-    }
-  </script>
 </body>
 </html>
