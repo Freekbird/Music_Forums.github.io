@@ -1,0 +1,111 @@
+/* =========================
+   General Page Styles
+========================= */
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Poppins', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: linear-gradient(135deg, #0f2027, #203a43, #2c5364); /* stylish gradient */
+    color: #fff;
+    text-align: center;
+}
+
+/* =========================
+   Header
+========================= */
+header {
+    padding: 60px 20px 40px 20px;
+}
+
+h1 {
+    font-size: 3.2em;
+    margin-bottom: 10px;
+    font-weight: 700;
+    text-shadow: 2px 2px 10px rgba(0,0,0,0.7);
+}
+
+header p {
+    font-size: 1.3em;
+    max-width: 700px;
+    margin: 0 auto;
+    line-height: 1.6em;
+    color: #e0e0e0;
+}
+
+/* =========================
+   Card Container
+========================= */
+.card-container {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 40px;
+    padding: 40px 20px 60px 20px;
+}
+
+/* =========================
+   Music Cards (Glass Effect)
+========================= */
+.music-card {
+    background: rgba(255, 255, 255, 0.1); /* translucent glass effect */
+    backdrop-filter: blur(10px);
+    border-radius: 25px;
+    width: 260px;
+    padding: 30px 20px;
+    text-decoration: none;
+    color: #fff;
+    transition: transform 0.35s ease, box-shadow 0.35s ease;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.music-card:hover {
+    transform: translateY(-12px) scale(1.03);
+    box-shadow: 0 20px 35px rgba(0,0,0,0.5);
+    background: rgba(255, 255, 255, 0.15);
+}
+
+.music-card h2 {
+    margin: 20px 0 10px 0;
+    font-size: 1.6em;
+    font-weight: 600;
+    color: #fff;
+}
+
+.music-card p {
+    font-size: 1em;
+    line-height: 1.5em;
+    color: #dcdcdc;
+}
+
+/* =========================
+   Icons on Cards
+========================= */
+.card-icon {
+    font-size: 3.5em;
+    text-shadow: 1px 1px 5px rgba(0,0,0,0.7);
+}
+
+/* =========================
+   Footer (optional)
+========================= */
+footer {
+    padding: 20px;
+    font-size: 0.9em;
+    color: #aaa;
+}
+
+/* =========================
+   Responsive Design
+========================= */
+@media (max-width: 900px) {
+    .card-container {
+        gap: 25px;
+    }
+}
+
+@media (max-width: 768px) {
+    .card-container {
+        flex-direction: column;
+        align-items: center;
+    }
+}
