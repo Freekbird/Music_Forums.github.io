@@ -1,119 +1,89 @@
-/* =========================
-   Tyrin Page Styling
-========================= */
+/* ===== Tyrin Page ===== */
 
 .tyrin-page {
-    background: radial-gradient(circle at top left, #0f2027, #1b2b34, #0f2027);
+    background: linear-gradient(135deg, #0f2027, #1b2b34, #0f2027);
     min-height: 100vh;
-    color: #fff;
+    color: white;
+    font-family: 'Segoe UI', sans-serif;
 }
 
-/* Header */
 .tyrin-header {
     text-align: center;
-    padding: 70px 20px 40px 20px;
+    padding: 60px 20px 30px 20px;
 }
 
 .tyrin-header h1 {
-    font-size: 3.2em;
+    font-size: 2.8em;
     margin-bottom: 10px;
-    letter-spacing: 1px;
 }
 
 .tyrin-header p {
-    font-size: 1.2em;
     color: #cfcfcf;
-    margin-bottom: 25px;
+    margin-bottom: 20px;
 }
 
-/* Back Button */
 .back-btn {
     text-decoration: none;
-    padding: 10px 20px;
-    border-radius: 50px;
+    padding: 8px 18px;
+    border-radius: 30px;
     background: rgba(255,255,255,0.1);
-    color: #fff;
+    color: white;
     border: 1px solid rgba(255,255,255,0.2);
     transition: 0.3s ease;
-    font-size: 0.9em;
 }
 
 .back-btn:hover {
     background: rgba(255,255,255,0.2);
-    transform: translateY(-3px);
 }
 
-/* Song Grid */
-.songs-container {
+/* ===== 2 Column Grid ===== */
+
+.songs-grid {
     display: grid;
-    grid-template-columns: repeat(2, 1fr); /* Always 2 per row */
-    gap: 35px;
-    padding: 40px 80px 80px 80px;
-    max-width: 1000px;
-    margin: 0 auto; /* center the whole section */
+    grid-template-columns: 1fr 1fr; /* EXACTLY 2 per row */
+    gap: 30px;
+    max-width: 900px;
+    margin: 40px auto 80px auto;
 }
 
-/* Song Cards */
+/* ===== Song Cards ===== */
+
 .song-card {
-    background: rgba(255, 255, 255, 0.07);
-    backdrop-filter: blur(12px);
-    border-radius: 25px;
-    padding: 30px;
-    transition: all 0.35s ease;
+    background: rgba(255,255,255,0.08);
+    border-radius: 18px;
+    padding: 25px;
+    transition: 0.3s ease;
     border: 1px solid rgba(255,255,255,0.15);
-    position: relative;
-    overflow: hidden;
-}
-
-/* Subtle Glow Border */
-.song-card::before {
-    content: "";
-    position: absolute;
-    inset: 0;
-    border-radius: 25px;
-    padding: 1px;
-    background: linear-gradient(45deg, #00c6ff, #0072ff);
-    -webkit-mask:
-        linear-gradient(#000 0 0) content-box,
-        linear-gradient(#000 0 0);
-    -webkit-mask-composite: xor;
-    mask-composite: exclude;
-    opacity: 0;
-    transition: opacity 0.3s ease;
-}
-
-.song-card:hover::before {
-    opacity: 1;
 }
 
 .song-card:hover {
-    transform: translateY(-10px);
-    box-shadow: 0 20px 40px rgba(0,0,0,0.6);
+    transform: translateY(-8px);
+    box-shadow: 0 15px 30px rgba(0,0,0,0.5);
 }
 
-/* Text Styling */
 .song-card h2 {
     margin-top: 0;
-    font-size: 1.5em;
+    font-size: 1.4em;
 }
 
-.artist {
+.song-card span {
     display: block;
-    font-size: 0.9em;
     color: #00c6ff;
-    margin-bottom: 15px;
+    font-size: 0.9em;
+    margin-bottom: 12px;
     font-weight: 600;
-    letter-spacing: 0.5px;
 }
 
 .song-card p {
     color: #d0d0d0;
-    line-height: 1.6em;
+    line-height: 1.5em;
 }
 
-/* Responsive */
+/* ===== Mobile ===== */
+
 @media (max-width: 768px) {
-    .songs-container {
-        padding: 30px;
+    .songs-grid {
+        grid-template-columns: 1fr; /* stack on phone */
+        padding: 0 20px;
     }
 }
