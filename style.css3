@@ -1,0 +1,58 @@
+body {
+    background-color: #0f0f0f;
+    color: white;
+    font-family: Arial, sans-serif;
+    padding: 20px;
+}
+
+h1 {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.back-btn {
+    background-color: #444;
+    color: white;
+    border: none;
+    padding: 8px 15px;
+    cursor: pointer;
+    border-radius: 5px;
+    margin-bottom: 15px;
+}
+
+.back-btn:hover {
+    background-color: #666;
+}
+
+.songs-container {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+}
+
+.song-card {
+    background-color: #1c1c1c;
+    padding: 15px;
+    border-radius: 10px;
+}
+
+.star {
+    font-size: 22px;
+    cursor: pointer;
+    color: gray;
+}
+
+textarea {
+    width: 100%;
+    margin-top: 10px;
+    padding: 5px;
+    border-radius: 5px;
+}
+
+button {
+    margin-top: 5px;
+    padding: 5px 10px;
+    border-radius: 5px;
+    border: none;
+    cursor: pointer;
+}
