@@ -1,122 +1,133 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-    <meta charset="UTF-8">
-    <title>Tyrin's Favorites</title>
+    <title>Tyrin Favorites</title>
     <link rel="stylesheet" href="style.css">
 </head>
+<body>
 
-<body class="tyrin-page">
+    <button onclick="window.location.href='index.html'" class="back-btn">⬅ Back to Main Page</button>
 
-    <header class="tyrin-header">
-        <h1>Tyrin's Favorites</h1>
-        <p>A collection of tracks that really hit different.</p>
-        <a href="index.html" class="back-btn">← Back to Home</a>
-    </header>
+    <h1>Tyrin's Favorite Songs</h1>
 
-    <main class="favorites-container">
+    <div class="songs-container">
 
-        <div class="favorites-grid">
+        <!-- SONG CARD -->
+        <div class="song-card">
+            <h2>Dreamcatcher – Hurricane Wisdom</h2>
+            <div class="stars" data-song="1"></div>
+            <p class="rating-text">No ratings yet</p>
 
-            <!-- SONG CARD -->
-            <div class="favorite-card" data-song="dreamcatcher">
-                <h2>Dreamcatcher</h2>
-                <span class="artist">Hurricane Wisdom</span>
-                <p>One of my favorites — the vibe and energy are unmatched.</p>
-                <div class="rating"></div>
-            </div>
-
-            <div class="favorite-card" data-song="hurtin">
-                <h2>Hurtin</h2>
-                <span class="artist">Lil Baby</span>
-                <p>Emotional flow with real meaning behind it.</p>
-                <div class="rating"></div>
-            </div>
-
-            <div class="favorite-card" data-song="righthere">
-                <h2>Right Here</h2>
-                <span class="artist">Lil Poppa</span>
-                <p>This one always hits when I play it.</p>
-                <div class="rating"></div>
-            </div>
-
-            <div class="favorite-card" data-song="latenight">
-                <h2>Late Night</h2>
-                <span class="artist">YMC Ant</span>
-                <p>Perfect late night track.</p>
-                <div class="rating"></div>
-            </div>
-
-            <div class="favorite-card" data-song="sliders">
-                <h2>Sliders & Spartans</h2>
-                <span class="artist">BC Tae</span>
-                <p>Unique sound and tough energy.</p>
-                <div class="rating"></div>
-            </div>
-
-            <div class="favorite-card" data-song="problems">
-                <h2>Still Having Problems</h2>
-                <span class="artist">Luhh Dyl</span>
-                <p>Relatable and raw lyrics.</p>
-                <div class="rating"></div>
-            </div>
-
-            <div class="favorite-card" data-song="comehome">
-                <h2>Come Home</h2>
-                <span class="artist">YFG Fatso</span>
-                <p>Chill but emotional vibe.</p>
-                <div class="rating"></div>
-            </div>
-
-            <div class="favorite-card" data-song="taylorport">
-                <h2>Taylorport</h2>
-                <span class="artist">Rylo</span>
-                <p>Strong storytelling and delivery.</p>
-                <div class="rating"></div>
-            </div>
-
+            <textarea placeholder="Leave a comment..."></textarea>
+            <button onclick="addComment(this)">Post</button>
+            <div class="comments"></div>
         </div>
 
-    </main>
+        <div class="song-card">
+            <h2>Hurtin – Lil Baby</h2>
+            <div class="stars" data-song="2"></div>
+            <p class="rating-text">No ratings yet</p>
+
+            <textarea placeholder="Leave a comment..."></textarea>
+            <button onclick="addComment(this)">Post</button>
+            <div class="comments"></div>
+        </div>
+
+        <div class="song-card">
+            <h2>Right Here – Lil Poppa</h2>
+            <div class="stars" data-song="3"></div>
+            <p class="rating-text">No ratings yet</p>
+
+            <textarea placeholder="Leave a comment..."></textarea>
+            <button onclick="addComment(this)">Post</button>
+            <div class="comments"></div>
+        </div>
+
+        <div class="song-card">
+            <h2>Late Night – YMC Ant</h2>
+            <div class="stars" data-song="4"></div>
+            <p class="rating-text">No ratings yet</p>
+
+            <textarea placeholder="Leave a comment..."></textarea>
+            <button onclick="addComment(this)">Post</button>
+            <div class="comments"></div>
+        </div>
+
+        <div class="song-card">
+            <h2>Sliders & Spartans – BC Tae</h2>
+            <div class="stars" data-song="5"></div>
+            <p class="rating-text">No ratings yet</p>
+
+            <textarea placeholder="Leave a comment..."></textarea>
+            <button onclick="addComment(this)">Post</button>
+            <div class="comments"></div>
+        </div>
+
+        <div class="song-card">
+            <h2>Still Having Problems – Luhh Dyl</h2>
+            <div class="stars" data-song="6"></div>
+            <p class="rating-text">No ratings yet</p>
+
+            <textarea placeholder="Leave a comment..."></textarea>
+            <button onclick="addComment(this)">Post</button>
+            <div class="comments"></div>
+        </div>
+
+        <div class="song-card">
+            <h2>Come Home – YFG Fatso</h2>
+            <div class="stars" data-song="7"></div>
+            <p class="rating-text">No ratings yet</p>
+
+            <textarea placeholder="Leave a comment..."></textarea>
+            <button onclick="addComment(this)">Post</button>
+            <div class="comments"></div>
+        </div>
+
+        <div class="song-card">
+            <h2>Taylorport – Rylo Rodriguez</h2>
+            <div class="stars" data-song="8"></div>
+            <p class="rating-text">No ratings yet</p>
+
+            <textarea placeholder="Leave a comment..."></textarea>
+            <button onclick="addComment(this)">Post</button>
+            <div class="comments"></div>
+        </div>
+
+    </div>
 
 <script>
-document.querySelectorAll(".favorite-card").forEach(card => {
-    const ratingContainer = card.querySelector(".rating");
-    const songKey = card.getAttribute("data-song");
-
-    for (let i = 1; i <= 5; i++) {
-        const star = document.createElement("span");
-        star.innerHTML = "★";
-        star.classList.add("star");
-        star.dataset.value = i;
-        ratingContainer.appendChild(star);
-    }
-
-    const stars = ratingContainer.querySelectorAll(".star");
-
-    // Load saved rating
-    const savedRating = localStorage.getItem(songKey);
-    if (savedRating) {
-        highlightStars(stars, savedRating);
-    }
-
-    stars.forEach(star => {
-        star.addEventListener("click", function () {
-            const value = this.dataset.value;
-            localStorage.setItem(songKey, value);
-            highlightStars(stars, value);
-        });
-    });
-});
-
-function highlightStars(stars, rating) {
-    stars.forEach(star => {
-        star.classList.remove("active");
-        if (star.dataset.value <= rating) {
-            star.classList.add("active");
+    // Create 5 stars for each song
+    document.querySelectorAll(".stars").forEach(starContainer => {
+        for (let i = 1; i <= 5; i++) {
+            let star = document.createElement("span");
+            star.innerHTML = "★";
+            star.classList.add("star");
+            star.onclick = function () {
+                let ratingText = starContainer.parentElement.querySelector(".rating-text");
+                ratingText.innerText = "Rating: " + i + " / 5";
+                highlightStars(starContainer, i);
+            };
+            starContainer.appendChild(star);
         }
     });
-}
+
+    function highlightStars(container, rating) {
+        let stars = container.querySelectorAll(".star");
+        stars.forEach((star, index) => {
+            star.style.color = index < rating ? "gold" : "gray";
+        });
+    }
+
+    function addComment(button) {
+        let textarea = button.previousElementSibling;
+        let commentText = textarea.value.trim();
+        if (commentText === "") return;
+
+        let commentDiv = document.createElement("p");
+        commentDiv.innerText = commentText;
+        button.nextElementSibling.appendChild(commentDiv);
+        textarea.value = "";
+    }
 </script>
 
 </body>
