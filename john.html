@@ -3,13 +3,15 @@
 <title> John's Favourites </title>
 
 <head>
-    <style>
-        body {
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+     <style>
+        .paralax {
             background-image: url('assets/Background.gif');
+            min-height: 500px; 
             background-size: cover;
             background-repeat: no-repeat;
             background-position: center center;
-            height: 200vh;    
+            background-attachment: fixed;
         }
         .title  {
             font-size: 60px;
@@ -49,16 +51,16 @@
         }
     </style>
 </head>
-
 <body>
+    <div class="parallax"></div>
+    <div style="height:1000px;background-color:red;font-size:36px">
     <h1 class="title"> Here are my top 5 favourite songs! </h1>
-    <div>
         <p class="big-text-left"> In first place is Feather by Nujabes and Cise Star.</p>
             <p class="small-text-left"> This song has a lot of depth, pop culture references, and a freeing motif going throughout the whole track</p> 
         <!-- Add a 10-second clip of Feather by Nujabes and Cise Star -->  
 
         <p class="big-text-center"> The #2 song is Sing About Me I'm Dying of Thirst by Kendrick Lamar.</p>
-            <p class="small-text-center"> This song has some absolutely stunning storytelling that makes you really think about it's meaning.</p>
+            <p class="small-text-center"> This song has some absolutely stunning storytelling that makes you really think about its meaning.</p>
 
 
         <p class="big-text-right">For the #3 spot, we have A Way of Life by Mosq.</p>
@@ -68,9 +70,8 @@
             <p class="small-text-center">This has a noir-jazz vibe that I legit cannot get enough of</p>
 
         <p class="big-text-left"> In the fifth spot is Fancy Clown, by MF Doom</p>
-            <p class="small-text-left"> I like this song because of how open, honest, and angry he is about being cheated on and slandered. It takes strenght.</p> 
+            <p class="small-text-left"> I like this song because of how open, honest, and angry he is about being cheated on and slandered. It takes strength.</p> 
         <!-- Add a 10-second clip of Acordion by MF DOOM :3 -->
-
     </div>
     </body>
 </html>
