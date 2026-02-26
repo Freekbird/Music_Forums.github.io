@@ -1,0 +1,27 @@
+.forum-post-box {
+    background-color: #1c1c1c;
+    padding: 20px;
+    border-radius: 10px;
+    margin-bottom: 30px;
+}
+
+.forum-post {
+    background-color: #222;
+    padding: 15px;
+    border-radius: 10px;
+    margin-bottom: 20px;
+}
+
+input, textarea {
+    width: 100%;
+    margin-top: 10px;
+    padding: 8px;
+    border-radius: 5px;
+    border: none;
+}
+
+.star {
+    font-size: 22px;
+    cursor: pointer;
+    color: gray;
+}
