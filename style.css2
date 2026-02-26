@@ -1,89 +1,116 @@
-/* ===== Tyrin Page ===== */
+/* ===== Tyrin Forum Page ===== */
 
 .tyrin-page {
-    background: linear-gradient(135deg, #0f2027, #1b2b34, #0f2027);
+    background: #0f2027;
     min-height: 100vh;
     color: white;
     font-family: 'Segoe UI', sans-serif;
 }
 
+/* ===== Header ===== */
+
 .tyrin-header {
     text-align: center;
-    padding: 60px 20px 30px 20px;
+    padding: 50px 20px 30px 20px;
+    border-bottom: 1px solid rgba(255,255,255,0.1);
 }
 
 .tyrin-header h1 {
-    font-size: 2.8em;
-    margin-bottom: 10px;
+    font-size: 2.5em;
+    margin-bottom: 8px;
 }
 
 .tyrin-header p {
-    color: #cfcfcf;
-    margin-bottom: 20px;
+    color: #bdbdbd;
 }
 
 .back-btn {
+    display: inline-block;
+    margin-top: 15px;
     text-decoration: none;
     padding: 8px 18px;
-    border-radius: 30px;
-    background: rgba(255,255,255,0.1);
+    border-radius: 20px;
+    background: rgba(255,255,255,0.08);
     color: white;
     border: 1px solid rgba(255,255,255,0.2);
-    transition: 0.3s ease;
+    transition: 0.2s ease;
 }
 
 .back-btn:hover {
     background: rgba(255,255,255,0.2);
 }
 
-/* ===== 2 Column Grid ===== */
+/* ===== Forum List Container ===== */
 
 .songs-grid {
-    display: grid;
-    grid-template-columns: 1fr 1fr; /* EXACTLY 2 per row */
-    gap: 30px;
-    max-width: 900px;
+    max-width: 1000px;
     margin: 40px auto 80px auto;
+    padding: 0 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
 }
 
-/* ===== Song Cards ===== */
+/* ===== Forum Row ===== */
 
 .song-card {
-    background: rgba(255,255,255,0.08);
-    border-radius: 18px;
-    padding: 25px;
-    transition: 0.3s ease;
-    border: 1px solid rgba(255,255,255,0.15);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: rgba(255,255,255,0.05);
+    padding: 18px 25px;
+    border-radius: 12px;
+    border: 1px solid rgba(255,255,255,0.08);
+    transition: 0.2s ease;
 }
 
 .song-card:hover {
-    transform: translateY(-8px);
-    box-shadow: 0 15px 30px rgba(0,0,0,0.5);
+    background: rgba(255,255,255,0.1);
+    transform: translateX(6px);
 }
 
-.song-card h2 {
-    margin-top: 0;
-    font-size: 1.4em;
+/* ===== Left Side ===== */
+
+.song-info h2 {
+    margin: 0;
+    font-size: 1.2em;
 }
 
-.song-card span {
+.song-info span {
     display: block;
+    font-size: 0.85em;
     color: #00c6ff;
-    font-size: 0.9em;
-    margin-bottom: 12px;
-    font-weight: 600;
+    margin-top: 4px;
 }
 
-.song-card p {
-    color: #d0d0d0;
-    line-height: 1.5em;
+.song-info p {
+    margin-top: 6px;
+    color: #cfcfcf;
+    font-size: 0.9em;
+}
+
+/* ===== Right Side (Forum Meta) ===== */
+
+.song-meta {
+    text-align: right;
+    font-size: 0.85em;
+    color: #aaaaaa;
+}
+
+.song-meta div {
+    margin-bottom: 5px;
 }
 
 /* ===== Mobile ===== */
 
 @media (max-width: 768px) {
-    .songs-grid {
-        grid-template-columns: 1fr; /* stack on phone */
-        padding: 0 20px;
+    .song-card {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 10px;
+    }
+
+    .song-meta {
+        text-align: left;
     }
 }
