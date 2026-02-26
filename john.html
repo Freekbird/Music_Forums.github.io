@@ -47,6 +47,17 @@
             text-align: right;
             color: white;
         }
+        .audio-container {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            margin-top: 10px;
+        }
+        audio {
+            width: 100%;  /* This can be customized based on desired size */
+            max-width: 400px;  /* Max width for the audio player */
+        }
+
 </style>
 </head>
 <body>
@@ -56,30 +67,44 @@
 
         <p class="big-text-left"> In first place is Feather by Nujabes and Cise Star.</p>
             <p class="small-text-left"> This song has a lot of depth, pop culture references, and a freeing motif going throughout the whole track</p> 
-        <audio controls> 
-            <source src="assets/Feather.mp3" type="audio/mpeg">
-        </audio>
-
+        <div class="audio-container">
+            <audio controls>
+                <source src="assets/Feather.mp3" type="audio/mpeg">
+                Your browser does not support the audio element.
+            </audio>
+        </div>
         <p class="big-text-center"> The #2 song is Sing About Me I'm Dying of Thirst by Kendrick Lamar.</p>
             <p class="small-text-center"> This song has some absolutely stunning storytelling that makes you really think about it's meaning.</p>
-        <audio controls> 
-            <source src="assets/Sing About Me.mp3" type="audio/mpeg">
-        </audio>
+         <div class="audio-container">
+            <audio controls>
+                <source src="assets/Sing About Me.mp3" type="audio/mpeg">
+                Your browser does not support the audio element.
+            </audio>
+        </div>
         <p class="big-text-right">For the #3 spot, we have A Way of Life by Mosq.</p>
             <p class="small-text-right"> This is essentially a remix of a song from the game Persona 3. It has no deep meaning, but it's nice, upbeat, and calm.</p>
-        <audio controls> 
-            <source src="assets/A Way of Life.mp3" type="audio/mpeg">
-        </audio>
+         <div class="audio-container">
+            <audio controls>
+                <source src="assets/A Way of Life.mp3" type="audio/mpeg">
+                Your browser does not support the audio element.
+            </audio>
+        </div>
         <p class="big-text-center">For the fourth spot, we have White Beyond by Taisei Iwasaki.</p>
             <p class="small-text-center">This has a noir-jazz vibe that I legit cannot get enough of</p>
-        <audio controls> 
-            <source src="assets/White Beyond.mp3" type="audio/mpeg">
-        </audio>
-        <p class="big-text-left"> In the fifth spot is Fancy Clown, by MF Doom</p>
-            <p class="small-text-left"> I like this song because of how open, honest, and angry he is about being cheated on and slandered. It takes strenght.</p> 
-        <audio controls> 
-            <source src="assets/Fancy Clown.mp3" type="audio/mpeg">
-        </audio>
+       <div class="audio-container">
+            <audio controls>
+                <source src="assets/White Beyond.mp3" type="audio/mpeg">
+                Your browser does not support the audio element.
+            </audio>
+        </div>
+        <p class="big-text-left"> In the fifth spot is Fancy Clown, by MF DOOM</p>
+            <p class="small-text-left"> I like this song because of how open, honest, and angry he is about being cheated on and slandered. It takes strength.</p> 
+        <div class="audio-container">
+            <audio controls>
+                <source src="assets/Fancy Clown.mp3" type="audio/mpeg">
+                Your browser does not support the audio element.
+            </audio>
+        </div>
 </div>
 </body>
 </html>
