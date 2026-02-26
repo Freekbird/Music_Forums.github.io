@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>U.S Popular Songs</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <button onclick="window.location.href='index.html'" class="back-btn">⬅ Back to Main Page</button>
+
+    <h1>U.S Popular Songs</h1>
+
+    <div class="songs-container">
+
+        <div class="song-card">
+            <h2>DtMF – Bad Bunny</h2>
+            <div class="stars"></div>
+            <p class="rating-text">No ratings yet</p>
+            <textarea placeholder="Leave a comment..."></textarea>
+            <button onclick="addComment(this)">Post</button>
+            <div class="comments"></div>
+        </div>
+
+        <div class="song-card">
+            <h2>E85 – Don Toliver</h2>
+            <div class="stars"></div>
+            <p class="rating-text">No ratings yet</p>
+            <textarea placeholder="Leave a comment..."></textarea>
+            <button onclick="addComment(this)">Post</button>
+            <div class="comments"></div>
+        </div>
+
+        <div class="song-card">
+            <h2>Man I Need – Olivia Dean</h2>
+            <div class="stars"></div>
+            <p class="rating-text">No ratings yet</p>
+            <textarea placeholder="Leave a comment..."></textarea>
+            <button onclick="addComment(this)">Post</button>
+            <div class="comments"></div>
+        </div>
+
+        <div class="song-card">
+            <h2>BAILE INoLVIDABLE – Bad Bunny</h2>
+            <div class="stars"></div>
+            <p class="rating-text">No ratings yet</p>
+            <textarea placeholder="Leave a comment..."></textarea>
+            <button onclick="addComment(this)">Post</button>
+            <div class="comments"></div>
+        </div>
+
+        <div class="song-card">
+            <h2>Body – Don Toliver</h2>
+            <div class="stars"></div>
+            <p class="rating-text">No ratings yet</p>
+            <textarea placeholder="Leave a comment..."></textarea>
+            <button onclick="addComment(this)">Post</button>
+            <div class="comments"></div>
+        </div>
+
+        <div class="song-card">
+            <h2>Good Days – SZA</h2>
+            <div class="stars"></div>
+            <p class="rating-text">No ratings yet</p>
+            <textarea placeholder="Leave a comment..."></textarea>
+            <button onclick="addComment(this)">Post</button>
+            <div class="comments"></div>
+        </div>
+
+        <div class="song-card">
+            <h2>Wait For U – Future</h2>
+            <div class="stars"></div>
+            <p class="rating-text">No ratings yet</p>
+            <textarea placeholder="Leave a comment..."></textarea>
+            <button onclick="addComment(this)">Post</button>
+            <div class="comments"></div>
+        </div>
+
+    </div>
+
+<script>
+    // Create 5 stars
+    document.querySelectorAll(".stars").forEach(container => {
+        for (let i = 1; i <= 5; i++) {
+            let star = document.createElement("span");
+            star.innerHTML = "★";
+            star.classList.add("star");
+            star.onclick = function () {
+                let ratingText = container.parentElement.querySelector(".rating-text");
+                ratingText.innerText = "Rating: " + i + " / 5";
+                highlightStars(container, i);
+            };
+            container.appendChild(star);
+        }
+    });
+
+    function highlightStars(container, rating) {
+        let stars = container.querySelectorAll(".star");
+        stars.forEach((star, index) => {
+            star.style.color = index < rating ? "gold" : "gray";
+        });
+    }
+
+    function addComment(button) {
+        let textarea = button.previousElementSibling;
+        let commentText = textarea.value.trim();
+        if (commentText === "") return;
+
+        let comment = document.createElement("p");
+        comment.innerText = commentText;
+        button.nextElementSibling.appendChild(comment);
+        textarea.value = "";
+    }
+</script>
+
+</body>
+</html>
