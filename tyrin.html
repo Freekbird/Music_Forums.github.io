@@ -1,55 +1,123 @@
-<main class="favorites-container">
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Tyrin's Favorites</title>
+    <link rel="stylesheet" href="style.css">
+</head>
 
-    <div class="favorites-grid">
+<body class="tyrin-page">
 
-        <div class="favorite-card">
-            <h2>Dreamcatcher</h2>
-            <span>Hurricane Wisdom</span>
-            <p>One of my favorites — the vibe and energy are unmatched.</p>
+    <header class="tyrin-header">
+        <h1>Tyrin's Favorites</h1>
+        <p>A collection of tracks that really hit different.</p>
+        <a href="index.html" class="back-btn">← Back to Home</a>
+    </header>
+
+    <main class="favorites-container">
+
+        <div class="favorites-grid">
+
+            <!-- SONG CARD -->
+            <div class="favorite-card" data-song="dreamcatcher">
+                <h2>Dreamcatcher</h2>
+                <span class="artist">Hurricane Wisdom</span>
+                <p>One of my favorites — the vibe and energy are unmatched.</p>
+                <div class="rating"></div>
+            </div>
+
+            <div class="favorite-card" data-song="hurtin">
+                <h2>Hurtin</h2>
+                <span class="artist">Lil Baby</span>
+                <p>Emotional flow with real meaning behind it.</p>
+                <div class="rating"></div>
+            </div>
+
+            <div class="favorite-card" data-song="righthere">
+                <h2>Right Here</h2>
+                <span class="artist">Lil Poppa</span>
+                <p>This one always hits when I play it.</p>
+                <div class="rating"></div>
+            </div>
+
+            <div class="favorite-card" data-song="latenight">
+                <h2>Late Night</h2>
+                <span class="artist">YMC Ant</span>
+                <p>Perfect late night track.</p>
+                <div class="rating"></div>
+            </div>
+
+            <div class="favorite-card" data-song="sliders">
+                <h2>Sliders & Spartans</h2>
+                <span class="artist">BC Tae</span>
+                <p>Unique sound and tough energy.</p>
+                <div class="rating"></div>
+            </div>
+
+            <div class="favorite-card" data-song="problems">
+                <h2>Still Having Problems</h2>
+                <span class="artist">Luhh Dyl</span>
+                <p>Relatable and raw lyrics.</p>
+                <div class="rating"></div>
+            </div>
+
+            <div class="favorite-card" data-song="comehome">
+                <h2>Come Home</h2>
+                <span class="artist">YFG Fatso</span>
+                <p>Chill but emotional vibe.</p>
+                <div class="rating"></div>
+            </div>
+
+            <div class="favorite-card" data-song="taylorport">
+                <h2>Taylorport</h2>
+                <span class="artist">Rylo</span>
+                <p>Strong storytelling and delivery.</p>
+                <div class="rating"></div>
+            </div>
+
         </div>
 
-        <div class="favorite-card">
-            <h2>Hurtin</h2>
-            <span>Lil Baby</span>
-            <p>Emotional flow with real meaning behind it.</p>
-        </div>
+    </main>
 
-        <div class="favorite-card">
-            <h2>Right Here</h2>
-            <span>Lil Poppa</span>
-            <p>This one always hits when I play it.</p>
-        </div>
+<script>
+document.querySelectorAll(".favorite-card").forEach(card => {
+    const ratingContainer = card.querySelector(".rating");
+    const songKey = card.getAttribute("data-song");
 
-        <div class="favorite-card">
-            <h2>Late Night</h2>
-            <span>YMC Ant</span>
-            <p>Perfect late night track.</p>
-        </div>
+    for (let i = 1; i <= 5; i++) {
+        const star = document.createElement("span");
+        star.innerHTML = "★";
+        star.classList.add("star");
+        star.dataset.value = i;
+        ratingContainer.appendChild(star);
+    }
 
-        <div class="favorite-card">
-            <h2>Sliders & Spartans</h2>
-            <span>BC Tae</span>
-            <p>Unique sound and tough energy.</p>
-        </div>
+    const stars = ratingContainer.querySelectorAll(".star");
 
-        <div class="favorite-card">
-            <h2>Still Having Problems</h2>
-            <span>Luhh Dyl</span>
-            <p>Relatable and raw lyrics.</p>
-        </div>
+    // Load saved rating
+    const savedRating = localStorage.getItem(songKey);
+    if (savedRating) {
+        highlightStars(stars, savedRating);
+    }
 
-        <div class="favorite-card">
-            <h2>Come Home</h2>
-            <span>YFG Fatso</span>
-            <p>Chill but emotional vibe.</p>
-        </div>
+    stars.forEach(star => {
+        star.addEventListener("click", function () {
+            const value = this.dataset.value;
+            localStorage.setItem(songKey, value);
+            highlightStars(stars, value);
+        });
+    });
+});
 
-        <div class="favorite-card">
-            <h2>Taylorport</h2>
-            <span>Rylo</span>
-            <p>Strong storytelling and delivery.</p>
-        </div>
+function highlightStars(stars, rating) {
+    stars.forEach(star => {
+        star.classList.remove("active");
+        if (star.dataset.value <= rating) {
+            star.classList.add("active");
+        }
+    });
+}
+</script>
 
-    </div>
-
-</main>
+</body>
+</html>
