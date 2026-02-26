@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Community Forum</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<button onclick="window.location.href='index.html'" class="back-btn">⬅ Back to Main Page</button>
+
+<h1>Community Music Forum</h1>
+
+<div class="forum-post-box">
+    <h2>Create a Post</h2>
+    <input type="text" id="postTitle" placeholder="Song Title or Topic">
+    <textarea id="postContent" placeholder="Share your music or thoughts..."></textarea>
+    <button onclick="createPost()">Post</button>
+</div>
+
+<div id="postsContainer"></div>
+
+<script>
+function createPost() {
+    let title = document.getElementById("postTitle").value.trim();
+    let content = document.getElementById("postContent").value.trim();
+
+    if (title === "" || content === "") return;
+
+    let postDiv = document.createElement("div");
+    postDiv.classList.add("forum-post");
+
+    postDiv.innerHTML = `
+        <h3>${title}</h3>
+        <p>${content}</p>
+
+        <div class="stars"></div>
+        <p class="rating-text">No ratings yet</p>
+
+        <textarea placeholder="Reply..."></textarea>
+        <button onclick="addComment(this)">Reply</button>
+        <div class="comments"></div>
+    `;
+
+    document.getElementById("postsContainer").prepend(postDiv);
+
+    createStars(postDiv.querySelector(".stars"));
+
+    document.getElementById("postTitle").value = "";
+    document.getElementById("postContent").value = "";
+}
+
+function createStars(container) {
+    for (let i = 1; i <= 5; i++) {
+        let star = document.createElement("span");
+        star.innerHTML = "★";
+        star.classList.add("star");
+        star.onclick = function () {
+            let ratingText = container.parentElement.querySelector(".rating-text");
+            ratingText.innerText = "Rating: " + i + " / 5";
+            highlightStars(container, i);
+        };
+        container.appendChild(star);
+    }
+}
+
+function highlightStars(container, rating) {
+    let stars = container.querySelectorAll(".star");
+    stars.forEach((star, index) => {
+        star.style.color = index < rating ? "gold" : "gray";
+    });
+}
+
+function addComment(button) {
+    let textarea = button.previousElementSibling;
+    let text = textarea.value.trim();
+    if (text === "") return;
+
+    let comment = document.createElement("p");
+    comment.innerText = text;
+    button.nextElementSibling.appendChild(comment);
+    textarea.value = "";
+}
+</script>
+
+</body>
+</html>
