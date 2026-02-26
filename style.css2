@@ -1,52 +1,112 @@
-/* ===== 4x2 Favorites Layout ===== */
+/* ===== Page Style ===== */
+
+.tyrin-page {
+    background: #0f2027;
+    min-height: 100vh;
+    font-family: 'Segoe UI', sans-serif;
+    color: white;
+    margin: 0;
+}
+
+/* Header */
+.tyrin-header {
+    text-align: center;
+    padding: 50px 20px;
+    border-bottom: 2px solid #222;
+}
+
+.tyrin-header h1 {
+    margin-bottom: 10px;
+}
+
+.tyrin-header p {
+    color: #bbb;
+}
+
+.back-btn {
+    display: inline-block;
+    margin-top: 15px;
+    padding: 8px 18px;
+    border-radius: 20px;
+    text-decoration: none;
+    background: #1b2b34;
+    color: white;
+    border: 1px solid #333;
+}
+
+.back-btn:hover {
+    background: #233946;
+}
+
+/* ===== 4x2 Layout ===== */
 
 .favorites-container {
-    padding: 60px 20px 80px;
+    padding: 60px 20px;
 }
 
 .favorites-grid {
     max-width: 1000px;
     margin: auto;
     display: grid;
-    grid-template-columns: repeat(2, 1fr); /* 2 per row */
+    grid-template-columns: repeat(2, 1fr);
     gap: 30px;
 }
 
-/* Card Style */
+/* Song Card */
 .favorite-card {
-    background: rgba(255,255,255,0.07);
-    padding: 25px;
-    border-radius: 18px;
-    border: 1px solid rgba(255,255,255,0.15);
+    background: #1a1a1a;
+    padding: 30px;
+    border: 2px solid #333;
     transition: 0.3s ease;
 }
 
 .favorite-card:hover {
-    transform: translateY(-8px);
-    box-shadow: 0 15px 30px rgba(0,0,0,0.4);
+    transform: translateY(-5px);
+    border-color: #00c6ff;
 }
 
 .favorite-card h2 {
     margin: 0 0 8px 0;
-    font-size: 1.3em;
+    font-size: 1.8em;
 }
 
-.favorite-card span {
+.artist {
     display: block;
-    color: #00c6ff;
-    font-size: 0.9em;
-    margin-bottom: 12px;
-    font-weight: 600;
+    font-size: 1em;
+    color: #ccc;
+    margin-bottom: 15px;
 }
 
 .favorite-card p {
-    color: #d0d0d0;
-    font-size: 0.95em;
+    font-size: 1em;
+    color: #ddd;
+}
+
+/* ===== Rating Stars ===== */
+
+.rating {
+    margin-top: 20px;
+}
+
+.star {
+    font-size: 24px;
+    cursor: pointer;
+    color: #555;
+    margin-right: 5px;
+    transition: 0.2s ease;
+}
+
+.star:hover {
+    color: gold;
+}
+
+.star.active {
+    color: gold;
 }
 
 /* Mobile */
 @media (max-width: 768px) {
     .favorites-grid {
-        grid-template-columns: 1fr; /* stack on phone */
+        grid-template-columns: 1fr;
     }
 }
